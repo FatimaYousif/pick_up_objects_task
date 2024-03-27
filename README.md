@@ -1,7 +1,5 @@
-# pick_up_objects_task
+# Pick up objects task
 
-
-# Turtlebot Online Path Planning
 
 In this Hands-on Planning lab attached with its package deliverable and repository [here](https://github.com/FatimaYousif/HOP_Lab_1) (which will be maintained for future work also), the first online path planning pipeline for Turtlebot3 was further developed. Having included the following classes as StateValidityChecker, Planner (RRT with smoothing) , and compute_path(), and move_to_point() functions alongside the OnlinePlanner class for online path planning and controlling a robot using ROS with Key functionalities including: Subscribing to various topics, implementing methods, providing velocity controller, implementing robot recovery (from obstacle avoidance) behaviour case to publishing markers for visualization in RViz. 
 <br><br>
@@ -15,10 +13,7 @@ In this Hands-on Planning lab attached with its package deliverable and reposito
 
 ## HOW TO RUN:
 
-
-### 1. Launch Gazebo and RViz
-
-For running, use the following command:
+For running the normal task of turtlebot3_stage world in the launch file (pick_up_objects_task.launch), use the following command:
 
 ```bash
 roslaunch pick_up_objects_task pick_up_objects_task.launch
