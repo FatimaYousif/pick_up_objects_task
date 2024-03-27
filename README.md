@@ -1,7 +1,8 @@
 # Pick up objects task
 
+This repository consists the lab work on Behaviour trees for the Pick up objects task at hand to achieve. The project is detailed with the structure of the behaviour tree, its respective py_trees implementation, 
+followed by the results for both the tasks a normal world task (turtlebot3_stage) alongside the challenging world task in (turtlebot3_stage_3), and visualization in RViz. 
 
-In this Hands-on Planning lab attached with its package deliverable and repository [here](https://github.com/FatimaYousif/HOP_Lab_1) (which will be maintained for future work also), the first online path planning pipeline for Turtlebot3 was further developed. Having included the following classes as StateValidityChecker, Planner (RRT with smoothing) , and compute_path(), and move_to_point() functions alongside the OnlinePlanner class for online path planning and controlling a robot using ROS with Key functionalities including: Subscribing to various topics, implementing methods, providing velocity controller, implementing robot recovery (from obstacle avoidance) behaviour case to publishing markers for visualization in RViz. 
 <br><br>
 
 ## Lab contributors & student ID:
