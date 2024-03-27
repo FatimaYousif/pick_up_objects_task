@@ -2,8 +2,7 @@
 
 This repository consists the lab work on Behaviour trees for the Pick up objects task at hand to achieve. The project is detailed with the structure of the behaviour tree, its respective py_trees implementation, 
 followed by the results for both the tasks a normal world task (turtlebot3_stage) alongside the challenging world task in (turtlebot3_stage_3), and visualization in RViz. 
-
-<br><br>
+<br>
 
 ## Lab contributors & student ID:
 
@@ -26,7 +25,7 @@ For running the extra bonus task of having included stage3 world (challenging), 
 roslaunch pick_up_objects_task pick_up_objects_task2.launch
 ```
 
-### 2. New terminal
+### New terminal
 
 ```bash
 rosrun pick_up_objects_task pickup_behaviors_node.py
