@@ -33,7 +33,7 @@ rosrun pick_up_objects_task pickup_behaviors_node.py
 
 ## Behaviour Tree structure:
 
-<img src="/images/BT.png" alt="BT Image" width="400"/>  
+<img src="/images/BT.png" alt="BT Image"/>  
 
 ## Special (Extra) Functionality:
 
