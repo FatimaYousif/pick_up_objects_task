@@ -65,4 +65,4 @@ Used in: __plan__ function
 
 ## Video - Visualization:
 
-[![Video of the robot planning the path](https://img.youtube.com/vi/suB0sYJcoR4/maxresdefault.jpg)](https://youtu.be/gElyY12p7Go "Watch the video on YouTube")
+![Video](/images/BT_stage1.mp4)
