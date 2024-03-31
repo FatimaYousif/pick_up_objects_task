@@ -5,11 +5,20 @@ followed by the results for both the tasks a normal world task (turtlebot3_stage
 <br>
 
 ## Lab contributors & student ID:
-
-| Name                    | ID       |
-| -------------------     | -------- |
-| Fatima Yousif Rustamani | u1992375 |
-| Lisa Paul Magoti        | u1992463 |
+<table>
+  <tr>
+    <th>Name</th>
+    <th>ID</th>
+  </tr>
+  <tr style="background-color: transparent;">
+    <td>Fatima Yousif Rustamani</td>
+    <td>u1992375</td>
+  </tr>
+  <tr style="background-color: transparent;">
+    <td>Lisa Paul Magoti</td>
+    <td>u1992463</td>
+  </tr>
+</table>
 
 ## HOW TO RUN:
 
@@ -65,4 +74,4 @@ Used in: __plan__ function
 
 ## Video - Visualization:
 
-![Video](/images/BT_stage1.mp4)
+![Video](/images/BT_stage1.gif)
