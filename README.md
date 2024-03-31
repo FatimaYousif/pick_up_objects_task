@@ -40,38 +40,32 @@ roslaunch pick_up_objects_task pick_up_objects_task2.launch
 rosrun pick_up_objects_task pickup_behaviors_node.py
 ```
 
-## Behaviour Tree structure:
+## Behaviour Tree :
 
 <img src="/images/BT.png" alt="BT Image"/>  
 
-## Special (Extra) Functionality:
+## Behaviour Tree - explanation
 
-The following are the added generic functions for ensuring safe navigation of the robot and robot control besides the RRT or Planner class´s auxiliary functions.
+To perform the pick and placing of 2 different objects (coke and bear) on its 5 possible yet different pick points, we implemented the following few additional classes except for the already given once including CheckObject, GetObject, LetObject alongside the given move behaviour.
 
-### __in_map__(self, loc)
+1. SetPoint: This behavior sets the goal point for the robot to move to for picking or placing an object. It reads from the list of pick points or place points based on the number of points already visited and increments the counter for visited points.
 
-The purpose of this general in-line method in the StateValidityChecker class is to check whether a given location (specified as a list of indices [x, y]) is within the boundaries of the map -  where called and necessary. It returns True if the location is within the map boundaries and False otherwise.
+2. MoveRobot: This behavior controls the movement of the robot to a specified goal position. It subscribes to the robot's odometry to get its current position and orientation and publishes a goal position to the `/move_base_simple/goal` topic for navigation.
 
-Used in: __position_to_map__, __check_vicinity__, and __is_valid__ functions
+3. Loop Termination: This composite behavior is a sequence that ensures the loop continues until either the number of objects collected (`objects_collected`) is less than the total number of objects to collect (len(place_points)) or the number of points visited (`points_visited`) is less than the total number of pick points (len(pick_points)).
 
-### __check_vicinity__(self, cell, distance, checking_path=False)
+4. Root: This is the main behavior tree's root node, which is also a sequence. It executes behaviors in the following order: loop termination, set point, move to pick, check object, get object, move to place, and let object. This sequence ensures that the robot repeatedly picks up and places objects until all objects are collected or all pick points are visited.
 
-Another general method within the StateValidityChecker class, this function checks the vicinity of a given cell within a certain distance. It iterates through the cells around the specified cell within the given distance and checks if any of them are obstacles. If checking_path is True, it considers a reduced distance to check for obstacles, for more frequent checks during path planning. It returns True if the vicinity is free from obstacles and False otherwise. 
-
-Used in: __is_valid__ function
-
-### __is_robot_in_obstacle__(self)
-
-This method checks if the robot is stuck in an obstacle by utilizing the is_valid method from the StateValidityChecker (svc) object. It extracts the current position of the robot (current_pose) and checks if it's within an obstacle (i.e., not a valid position). If the current position is not valid, indicating it's stuck in an obstacle, the function returns True; otherwise, it returns False.
-
-Used in: __plan__ function
-
-### __recover__(self)
-
-The recover method in the OnlinePlanner class handles recovery behavior when the robot is stuck in an obstacle. It sets the robot to move backward for a predefined recovery duration to try to get it out of the stuck situation.
-
-Used in: __plan__ function
+It uses blackboard variables to communicate state information between different behaviors and keep track of the progress of tasks.
 
 ## Video - Visualization:
 
 ![Video](/images/BT_stage1.gif)
+
+## Problems Found
+The following were the problems encountered:
+1. Understandind and managing Blackboard component in py_trees for implementation purposes.
+2. Having to incoperate the turtlebot3_stage_3.world with obstacles and walls.
+3. 
+
+## Conclusion
