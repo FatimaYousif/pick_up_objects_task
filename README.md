@@ -63,9 +63,10 @@ It uses blackboard variables to communicate state information between different 
 ![Video](/images/BT_stage1.gif)
 
 ## Problems Found
+
 The following were the problems encountered:
-1. Understandind and managing Blackboard component in py_trees for implementation purposes.
-2. Having to incoperate the turtlebot3_stage_3.world with obstacles and walls.
-3. 
+None, yet an easy-level problem was the understanding and managing Blackboard component in py_trees for implementation purposes.
 
 ## Conclusion
+
+goes here ...
