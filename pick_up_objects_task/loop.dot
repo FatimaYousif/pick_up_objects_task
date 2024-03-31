@@ -1,0 +1,25 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Loop [fillcolor=orange, fontcolor=black, fontsize=9, label="Ⓜ Loop", shape=box, style=filled];
+loop_terminator [fillcolor=orange, fontcolor=black, fontsize=9, label="Ⓜ loop_terminator", shape=box, style=filled];
+Loop -> loop_terminator;
+objects_below_2 [fillcolor=gray, fontcolor=black, fontsize=9, label=objects_below_2, shape=ellipse, style=filled];
+loop_terminator -> objects_below_2;
+points_below_5 [fillcolor=gray, fontcolor=black, fontsize=9, label=points_below_5, shape=ellipse, style=filled];
+loop_terminator -> points_below_5;
+set_point [fillcolor=gray, fontcolor=black, fontsize=9, label=set_point, shape=ellipse, style=filled];
+Loop -> set_point;
+move_to_pick [fillcolor=gray, fontcolor=black, fontsize=9, label=move_to_pick, shape=ellipse, style=filled];
+Loop -> move_to_pick;
+check_object [fillcolor=gray, fontcolor=black, fontsize=9, label=check_object, shape=ellipse, style=filled];
+Loop -> check_object;
+get_object [fillcolor=gray, fontcolor=black, fontsize=9, label=get_object, shape=ellipse, style=filled];
+Loop -> get_object;
+move_to_place [fillcolor=gray, fontcolor=black, fontsize=9, label=move_to_place, shape=ellipse, style=filled];
+Loop -> move_to_place;
+let_object [fillcolor=gray, fontcolor=black, fontsize=9, label=let_object, shape=ellipse, style=filled];
+Loop -> let_object;
+}
