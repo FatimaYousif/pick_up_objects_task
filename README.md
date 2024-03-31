@@ -60,6 +60,10 @@ It uses blackboard variables to communicate state information between different 
 
 ## Video - Visualization:
 
+#### Easy scenario - without obstacles - turtlebot3_stage_1.world
+![Video](/images/BT_stage1.gif)
+
+#### Challenging scenario - with obstacles - turtlebot3_stage_3.world
 ![Video](/images/BT_stage1.gif)
 
 ## Problems Found
