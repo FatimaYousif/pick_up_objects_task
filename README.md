@@ -64,9 +64,9 @@ It uses blackboard variables to communicate state information between different 
 
 ## Problems Found
 
-The following were the problems encountered:
-None, yet an easy-level problem was the understanding and managing Blackboard component in py_trees for implementation purposes.
+We did not face any hard or big problem, however an easy-level problem was the understanding and managing Blackboard component in py_trees for implementation purposes.
 
 ## Conclusion
 
-goes here ...
+In conclusion, this lab proved to be a great learning resource to the main topic of behaviour trees especially for the pick and place tasks (object manipulation) beyond just the theoretical concept. The already provided individual components of the behaviour tree with further added behaviours showed how extensive it can be to use the behaviour trees with py_trees.
+Nonetheless, with thorough testing and refinement, behaviour trees stand as a promising framework for autonomous robot control.
