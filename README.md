@@ -64,7 +64,7 @@ It uses blackboard variables to communicate state information between different 
 ![Video](/images/BT_stage1.gif)
 
 #### Challenging scenario - with obstacles - turtlebot3_stage_3.world
-![Video](/images/BT_stage1.gif)
+![Video](/images/BT_stage3.gif)
 
 ## Problems Found
 
