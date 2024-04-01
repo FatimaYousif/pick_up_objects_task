@@ -28,10 +28,10 @@ For running the normal task of turtlebot3_stage world in the launch file (pick_u
 roslaunch pick_up_objects_task pick_up_objects_task.launch
 ```
 
-For running the extra bonus task of having included stage3 world (challenging), use the following command:
+For running the extra bonus task of having included stage3 world (challenging), uncomment the following line in the same lwunch file:
 
 ```bash
-roslaunch pick_up_objects_task pick_up_objects_task2.launch
+<arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_stage_3.world"/>
 ```
 
 ### New terminal
