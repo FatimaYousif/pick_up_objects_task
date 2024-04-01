@@ -293,10 +293,8 @@ class SetPoint(py_trees.behaviour.Behaviour):
         self.logger.debug("  %s [SetPoint::terminate().terminate()][%s->%s]" %
                           (self.name, self.status, new_status))
 
-def create_tree():
-
+def run(iterations=300):
     #behaviours
-
     set_point = SetPoint(name="set_point")
     move_to_pick = MoveRobot(name= "move_to_pick")
     check_object = CheckObject(name= "check_object")
@@ -328,19 +326,12 @@ def create_tree():
     root = py_trees.composites.Sequence(name = "Loop", memory=True)
     root.add_children([loop_terminator, set_point, move_to_pick,check_object, get_object, move_to_place, let_object])
     
-    return root
-
-
-def run(it=200):
-    root = create_tree()
 
     try:
-        print("Call setup for all tree children")
         root.setup_with_descendants() 
-        print("Setup done!\n\n")
         py_trees.display.ascii_tree(root)
         
-        for _ in range(it):
+        for _ in range(iterations):
             root.tick_once()
             time.sleep(2)
     except KeyboardInterrupt:
@@ -351,7 +342,37 @@ if __name__ == "__main__":
     py_trees.logging.level = py_trees.logging.Level.DEBUG
     rospy.init_node("behavior_trees")
 
-    root=create_tree()
+    #behaviours
+    set_point = SetPoint(name="set_point")
+    move_to_pick = MoveRobot(name= "move_to_pick")
+    check_object = CheckObject(name= "check_object")
+    get_object = GetObject(name= "get_object")
+    move_to_place= MoveRobot(name= "move_to_place")
+    let_object = LetObject(name= "let_object")
+
+    points_below_5 = py_trees.behaviours.CheckBlackboardVariableValue(
+        name= "points_below_5",
+        check = py_trees.common.ComparisonExpression(
+            variable= "points_visited",
+            value=len(pick_points),
+            operator = operator.lt
+        )
+    )
+
+    objects_below_2 = py_trees.behaviours.CheckBlackboardVariableValue(
+        name= "objects_below_2",
+        check = py_trees.common.ComparisonExpression(
+            variable= "objects_collected",
+            value=len(place_points),   #use dict len instead of 2
+            operator = operator.lt
+        )
+    )
+
+    loop_terminator = py_trees.composites.Sequence( name = "loop_terminator", memory=True)
+    loop_terminator.add_children([objects_below_2, points_below_5])
+
+    root = py_trees.composites.Sequence(name = "Loop", memory=True)
+    root.add_children([loop_terminator, set_point, move_to_pick,check_object, get_object, move_to_place, let_object])
 
     # printing for report purpose
     # py_trees.display.render_dot_tree(root) # generates a figure for the 'root' tree.    
